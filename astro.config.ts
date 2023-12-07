@@ -8,7 +8,7 @@ import AutoImport from "astro-auto-import";
 import {
   astroCodeSnippets,
   codeSnippetAutoImport,
-} from "./integrations/astro-code-snippets";
+} from "./integrations/astro-code-snippets.js";
 import partytown from "@astrojs/partytown";
 
 // https://astro.build/config

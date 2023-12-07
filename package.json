@@ -9,6 +9,7 @@
     "build": "astro check && tsc --noEmit && astro build",
     "preview": "vercel dev",
     "astro": "astro",
+    "docker:build": "docker build -t nemanjamitic/blog:0.0.1 ./docker",
     "prettier": "prettier --write ."
   },
   "devDependencies": {
@@ -21,6 +22,7 @@
     "prettier": "^3.1.0",
     "prettier-plugin-astro": "^0.12.2",
     "sharp": "^0.32.6",
+    "tailwindcss": "^3.3.6",
     "typescript": "^5.3.2"
   },
   "dependencies": {

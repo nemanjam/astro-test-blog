@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  app:
+    image: nemanjamitic/blog:latest
+    container_name: blog
+    # all that is needed to build prod live image
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    ports:
+      - '3001:3001'
+    environment:
+      - SITE_HOSTNAME
+      - PORT
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
