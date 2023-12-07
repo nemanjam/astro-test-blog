@@ -1,6 +1,6 @@
 # Welcome to [Astro](https://astro.build)
 
-#### Forked from here: 
+## Forked from here: 
 
 https://github.com/thomasledoux1/website-thomas-astro
 
