@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
-import vercel from "@astrojs/vercel/serverless";
+// import vercel from "@astrojs/vercel/serverless";
 import { remarkReadingTime } from "./src/utils/calculate-reading-time.js";
 import react from "@astrojs/react";
 import AutoImport from "astro-auto-import";
@@ -37,14 +37,14 @@ export default defineConfig({
   prefetch: {
     prefetchAll: true,
   },
-  output: "hybrid",
-  adapter: vercel({
-    speedInsights: { enabled: true },
-  }),
+  // output: "hybrid",
+  // adapter: vercel({
+  //   speedInsights: { enabled: true },
+  // }),
   markdown: {
     remarkPlugins: [remarkReadingTime],
   },
-  site: "https://www.thomasledoux.be",
+  site: "http://localhost:8080",
 });
 
 console.log(

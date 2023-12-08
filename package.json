@@ -9,7 +9,8 @@
     "build": "astro check && tsc --noEmit && astro build",
     "preview": "vercel dev",
     "astro": "astro",
-    "docker:build": "docker build -t nemanjamitic/blog:0.0.1 ./docker",
+    "docker:build": "docker build -f docker/Dockerfile -t nemanjamitic/blog:0.0.1 ./",
+    "dc:build": "docker compose build app",
     "prettier": "prettier --write ."
   },
   "devDependencies": {

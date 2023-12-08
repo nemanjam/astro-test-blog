@@ -1,4 +1,4 @@
-FROM node:lts AS base
+FROM node:20.10.0-slim AS base
 WORKDIR /app
 
 # By copying only the package.json and yarn.lock here, we ensure that the following `-deps` steps are independent of the source code.
@@ -13,7 +13,7 @@ RUN yarn install --production=false
 
 FROM build-deps AS build
 COPY . .
-RUN yarn run build
+RUN yarn build
 
 # FROM base AS runtime
 # COPY --from=prod-deps /app/node_modules ./node_modules
@@ -24,7 +24,7 @@ RUN yarn run build
 # EXPOSE 4321
 # CMD node ./dist/server/entry.mjs
 
-FROM nginx:alpine AS runtime
+FROM nginx:stable-alpine3.17-slim AS runtime
 COPY ./docker/nginx.conf /etc/nginx/nginx.conf
 COPY --from=prod-deps /app/node_modules /usr/share/nginx/html/node_modules
 COPY --from=build /app/dist /usr/share/nginx/html
