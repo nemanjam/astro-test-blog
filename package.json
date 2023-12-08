@@ -9,9 +9,10 @@
     "build": "astro check && tsc --noEmit && astro build",
     "preview": "vercel dev",
     "astro": "astro",
-    "docker:build": "docker build -f docker/Dockerfile -t nemanjamitic/blog:0.0.1 ./",
-    "dc:build": "docker compose build app",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "docker:build": "docker build -f docker/Dockerfile -t nemanjamitic/astro-blog:0.0.1 ./",
+    "dc:build": "docker compose build astro-blog",
+    "docker:push": "docker push nemanjamitic/astro-blog:0.0.1"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^5.0.2",

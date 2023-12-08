@@ -1,10 +1,9 @@
 version: '3.8'
 
 services:
-  app:
-    image: nemanjamitic/blog:0.0.1
-    container_name: blog
-    # all that is needed to build prod live image
+  astro-blog:
+    image: nemanjamitic/astro-blog:0.0.1
+    container_name: astro-blog
     build:
       context: ./
       dockerfile: docker/Dockerfile
